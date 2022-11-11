@@ -11,9 +11,9 @@ class ImportCategoryController {
   
       await importCategoryUseCase.execute(file);
       
-      return response.send(); 
+      return response.status(201).send(); 
     } catch (error) {
-      response.status(400).json({ message: error.message })
+      response.status(500).json({ message: error.message })
     }
   }
 }

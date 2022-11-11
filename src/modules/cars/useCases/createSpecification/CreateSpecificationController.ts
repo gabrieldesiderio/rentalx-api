@@ -12,7 +12,7 @@ class CreateSpecificationController {
 
       return response.status(201).send();
     } catch (error) {
-      return response.status(400).json({ message: error.message });
+      return response.status(500).json({ message: error.message });
     }
   }
 }
