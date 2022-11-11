@@ -1,4 +1,4 @@
-import { getRepository, Repository } from "typeorm";
+import { Repository } from "typeorm";
 import AppDataSource from "../../../../database";
 import { Category } from "../../entities/Category";
 import { ICategoriesRepository, ICreateCategoryDTO } from "../ICategoriesRepository";
