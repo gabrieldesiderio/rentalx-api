@@ -4,9 +4,9 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "ts-node-dev --poll --inspect --transpile-only --ignore-watch node_modules --respawn src/server.ts",
+    "dev": "ts-node-dev -r tsconfig-paths/register --poll --inspect --transpile-only --ignore-watch node_modules --respawn src/server.ts",
     "jest": "jest",
-    "typeorm": "typeorm-ts-node-commonjs",
+    "typeorm": "typeorm-ts-node-commonjs -r tsconfig-paths/register",
     "test": "jest"
   },
   "dependencies": {
@@ -43,6 +43,7 @@
     "prettier": "^2.7.1",
     "ts-jest": "^29.0.3",
     "ts-node-dev": "^2.0.0",
+    "tsconfig-paths": "^4.1.0",
     "typescript": "*"
   }
 }
