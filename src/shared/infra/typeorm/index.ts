@@ -8,20 +8,12 @@ const AppDataSource = new DataSource({
   password: "ignite",
   database: "rentx",
   migrations: [
-    './src/database/migrations/*.ts'
+    `${__dirname}/migrations/*.ts`
   ],
   entities: [
-    './src/modules/**/entities/*.ts'
+    `${__dirname}/../../../modules/**/infra/typeorm/entities/*.ts`
   ]
 })
-
-// AppDataSource.initialize()
-//   .then(() => {
-//     console.log("Data Source has been initialized!")
-//   })
-//   .catch((err) => {
-//     console.error("Error during Data Source initialization", err)
-//   })
 
 export function createConnection(host = 'database'): Promise<DataSource> {
   return AppDataSource.setOptions({ host }).initialize();
